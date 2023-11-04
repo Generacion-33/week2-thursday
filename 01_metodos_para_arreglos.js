@@ -97,6 +97,137 @@ console.log('--Spred operator--');
 const grupoDeIntegracion3 = [...g1, ...g2, 'Luis', 'Camilo']
 console.log(grupoDeIntegracion3);
 
+console.log('');
+console.log('--vierness--');
+console.log('');
+
+const estudiantes = ['Fermin', 'Luis', 'Yure', 'Camilo', 'Jonathan', 'Alberto', 'Dana', 'Roberto', 'Juan']
+
+console.log(estudiantes);
+
+
+//SPLICE: Se utiliza para el contenido de un array, eliminando elementos y/o agregando elementos.
+
+/**
+ * Desde:(la posicion) el indice de donde empezara a operar
+ *
+ * cuantos:(el numero de elementos que deseo eliminar)
+ *
+ * elementos: (opcoional, son los elementos que voy anñadir al array)
+ */
+//En caso que elimine elementos, me dara un array con los elementos eliminados, en caso que no elimine ningun elemento, me dara un array vacio.Es decir de longitud cero.
+
+console.log('--splice--');
+
+console.log(estudiantes.splice(2, 2)); //['Yure', 'Camilo']
+
+console.log(estudiantes); //['Fermin', 'Luis', 'Jonathan', 'Alberto', 'Dana', 'Roberto', 'Juan']
+
+
+
+console.log(estudiantes.splice(4, 0, 'Carlos', 'Micael')); //[], el array esta vacio, porque elimine cero elementos. Ahora Carlos ocupa el indice 4, y Micael el 5. 
+console.log(estudiantes); //['Fermin',   'Luis', 'Jonathan', 'Alberto','Carlos',   'Micael', 'Dana',     'Roberto', 'Juan']
+
+console.log(estudiantes.splice(-1, 1, 'Alexander')); //['Juan']
+console.log(estudiantes); //['Fermin',    'Luis', 'Jonathan',  'Alberto','Carlos',    'Micael', 'Dana',      'Roberto', 'Alexander']
+
+
+//.slice: crea un nuevo array, y copia elementos desde la posicion que indique, hasta la posicion que desee. Es importante mencionar, que el ultimo indice no lo incluye para operar.
+
+console.log('--slice--');
+const colores = ['rojo', 'verde', 'azul', 'amarillo']
+//                 0        1        2       3
+
+console.log(colores.slice(1, 3));//['verde', 'azul']
+
+console.log(colores); //[ 'rojo', 'verde', 'azul', 'amarillo' ]
+console.log(colores.slice(1));//[ 'verde', 'azul', 'amarillo' ]
+console.log(colores.slice(0));//['rojo', 'verde', 'azul', 'amarillo']
+console.log(colores.slice());//['rojo', 'verde', 'azul', 'amarillo']
+console.log(colores.slice(2, 3));//[ 'azul']
+
+console.log(colores.slice(-1)); //['amarillo']
+console.log(colores.slice(-2)); //[ 'azul', 'amarillo' ]
+console.log(colores.slice(-4)); //[ 'azul' ]
+
+
+//.reverse() : oredena el array de forma inversa y lo retorna
+console.log('--reverse--');
+const numeros = [10, 20, 30, 40, 50]
+console.log(numeros);
+console.log(numeros.reverse()); //[ 50, 40, 30, 20, 10 ]
+
+
+//sort() : ordena los elementos de un array. De manera predeterminad , el sort ordena los elementos alfabeticamente. En caso de que sean numeros, los va a convertir a str. El metodo sort es muy flexible, ya que nativamente nos ordena alfabeticamente, pero acepta funciones, en nosotros podemos indicar como queremos que nos oredene. 
+console.log('--sort--');
+
+const abc = ['o', 'e', 'i', 'u', 'a']
+
+console.log(abc.sort()); //[ 'a', 'e', 'i', 'o', 'u' ]
+console.log(abc.sort().reverse()); //[ 'u', 'o', 'i', 'e', 'a' ]
+
+const desordenados = [34, 12, 24, 9, 5]
+
+
+//-1,0,1
+/**
+ * (a,b) a es menor que b => (1-3) <-1. Entonces, a es menor que b. (-1). Primero va ir a, y luego va ir b
+ * 
+ * (a,b)  a es mayor que b => (4-1) >1. Entonces, a es mayor que b. (1). Primero ira b, y luego ira a
+ * 
+ * 
+ *(a,b) a es igual que b, (4-4) = 0. Entonces cuando nos dara cero, significa que son iguales
+ * 
+ */
+
+// function menorAmayor(a, b) {
+//   if (a - b < -1) return -1 //significa que a es menor que b
+//   else if (a - b > 1) return 1 //significa a es mayor que b
+//   return 0 //significa a es igual que b
+// }
+
+console.log(desordenados.sort((a, b) => b - a)); //de mayor a menor
+
+console.log(desordenados.sort((a, b) => a - b)); //menor a mayor
+
+
+//.map() ->  cada vez que que crean un array vacio, y reccoren un array para pushear al array vacio, lo pueden resolver con un map(). Nos retorna un array nuevo
+
+//.filter() ->cada vez que que crean un array vacio, y reccoren un array para pushear, pero antes de pushear van hacer una validacion(es decir que aplicaran un if) , entonces esto lo pueden resolver con un filter().Nos retorna un array nuevo
+
+//find() -> lo podemso pensar como el includes, pero en lugar de retornanr true or false, nos dara el elemento, el primero que encuentre. Nos retorna el elemento
+
+//reducer() -> esta reduciendo el array a un unico valor numerico. Nos retorna un valor numerico
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
